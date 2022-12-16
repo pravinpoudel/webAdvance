@@ -15,6 +15,18 @@ Note: Most GPU now support early depth testing !!!
 #### Wikipedia:
 
 
+![image](https://user-images.githubusercontent.com/11494733/207999943-32df5819-5688-4c6e-beaf-10baf2b87669.png)
 
 
+![image](https://user-images.githubusercontent.com/11494733/208000087-6b2cf00b-62e8-41b0-8d8a-ab0e03b0c55e.png)
+
+for frame buffer, 
+
+render attachment is frame buffer where we use context to configure width and height of the frame buffer
+
+1. get context
+2. configure swap chain in the context
+3. from that context, get the current view
+4. pass it to color attachment in render pass descriptor which need color attachment and depth attachment
+5. in that command/pass encoder, also give the viewport size
 
