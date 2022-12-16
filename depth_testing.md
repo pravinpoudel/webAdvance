@@ -30,3 +30,21 @@ render attachment is frame buffer where we use context to configure width and he
 4. pass it to color attachment in render pass descriptor which need color attachment and depth attachment
 5. in that command/pass encoder, also give the viewport size
 
+#### Z-fighting ( condition where two planes or triangles are so closely alligned to each other that depth buffer does not have enough precision to figure pur which element should be in front of another) :  learnopengl
+
+The result is that two object switch order and cause glitchty pattern
+
+![image](https://user-images.githubusercontent.com/11494733/208002962-1e18ae55-361d-41c5-ba46-c26fb24d48ca.png)
+
+Solution can be:
+
+1. Use high precision of depth buffer like 32 bits instead of 24 bits but it can cost performance
+2. don't place two plane in same height or same position and even if you have small offset, it might not be visible to eye but have big affect on the z-buffer
+3. place near plane far !! 
+
+### i dont understand this near plane solution because i dont understand this idea of non-linear depth buffer 
+
+![image](https://user-images.githubusercontent.com/11494733/208003365-b4be8913-4f29-417b-a7f6-9161cb0fc12f.png)
+
+
+
